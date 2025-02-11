@@ -2,9 +2,6 @@ name: Build and push docker image
 
 # Trigger the workflow on push to main branch or pull requests to main
 on:
-  push:
-    branches:
-      - 'dev'
   pull_request:
     branches:
       - 'dev'
@@ -30,7 +27,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/your-app-name:latest .
+        docker build -t ghcr.io/${{ github.repository_owner }}/app-web:dev-latest .
 
     - name: Test Docker image
       run: |
