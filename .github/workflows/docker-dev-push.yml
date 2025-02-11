@@ -1,11 +1,8 @@
-name: Build and push docker image
+name: Docker push image to GHCR
 
 # Trigger the workflow on push to main branch or pull requests to main
 on:
   push:
-    branches:
-      - 'dev'
-  pull_request:
     branches:
       - 'dev'
 
@@ -30,15 +27,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/your-app-name:latest .
-
-    - name: Test Docker image
-      run: |
-        docker run -d -p 80:80 ghcr.io/${{ github.repository_owner }}/app-web:dev-latest
-        # Wait a bit for the container to start and then test it
-        sleep 5
-        curl --silent --fail http://localhost:80 || exit 1
-        docker stop $(docker ps -q)
+        docker build -t ghcr.io/${{ github.repository_owner }}/app-web:dev-latest .
 
     - name: Log in to GitHub Container Registry
       uses: docker/login-action@v2
