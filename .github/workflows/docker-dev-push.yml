@@ -7,7 +7,7 @@ on:
       - 'dev'
 
 jobs:
-  build:
+  docker-push-image:
     runs-on: ubuntu-latest
 
     steps:
