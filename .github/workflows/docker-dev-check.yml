@@ -11,7 +11,7 @@ permissions:
 
 # Trigger the workflow on push to main branch or pull requests to main
 on:
-  pull_request:
+  push:
     branches:
       - 'dev'
 
@@ -38,13 +38,10 @@ jobs:
       run: |
         docker build -t ghcr.io/${{ github.repository_owner }}/app-web:dev-latest .
 
-    - name: Log in to GitHub Container Registry
-      uses: docker/login-action@v2
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}  # GitHub provides this token automatically
-
-    - name: Push Docker image to GHCR
+    - name: Test Docker image
       run: |
-        docker push ghcr.io/${{ github.repository_owner }}/app-web:dev-latest
+        docker run -d -p 80:80 ghcr.io/${{ github.repository_owner }}/app-web:dev-latest
+        # Wait a bit for the container to start and then test it
+        sleep 5
+        curl --silent --fail http://localhost:80 || exit 1
+        docker stop $(docker ps -q)
