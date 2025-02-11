@@ -8,7 +8,6 @@ on:
 
 jobs:
   linter-check:
-    name: Run ESLint
     runs-on: ubuntu-latest
 
     steps:
