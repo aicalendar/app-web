@@ -1,5 +1,14 @@
 name: Build and push docker image
 
+permissions:
+  actions: read
+  contents: read
+  packages: write
+  deployments: read
+  issues: write
+  pull-requests: read
+  statuses: write
+
 # Trigger the workflow on push to main branch or pull requests to main
 on:
   pull_request:
