@@ -11,7 +11,7 @@ permissions:
 
 # Trigger the workflow on push to main branch or pull requests to main
 on:
-  push:
+  pull_request:
     branches:
       - 'dev'
 
