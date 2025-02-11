@@ -1,6 +1,8 @@
 name: Docker push image to GHCR
 
-# Trigger the workflow on push to main branch or pull requests to main
+permissions:
+  packages: write 
+
 on:
   push:
     branches:
