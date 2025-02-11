@@ -1,4 +1,4 @@
-name: Build and push docker image
+name: Push docker image to GHCR
 
 permissions:
   actions: read
