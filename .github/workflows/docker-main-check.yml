@@ -4,7 +4,7 @@ name: Build and push docker image
 on:
   pull_request:
     branches:
-      - 'dev'
+      - 'main'
 
 jobs:
   docker-build-and-check:
@@ -27,11 +27,11 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/app-web:dev-latest .
+        docker build -t ghcr.io/${{ github.repository_owner }}/app-web:latest .
 
     - name: Test Docker image
       run: |
-        docker run -d -p 80:80 ghcr.io/${{ github.repository_owner }}/app-web:dev-latest
+        docker run -d -p 80:80 ghcr.io/${{ github.repository_owner }}/app-web:latest
         # Wait a bit for the container to start and then test it
         sleep 5
         curl --silent --fail http://localhost:80 || exit 1
