@@ -5,8 +5,18 @@
 				<h2>Welcome</h2>
 				<p>Login to your AICalendar app</p>
 			</div>
+			<form method="POST">
+				<label>
+					Username
+					<input name="username" type="email" />
+				</label>
+				<label>
+					Password
+					<input name="password" type="password" />
+				</label>
+			</form>
 		</div>
-		<div class="right-side">Ddada</div>
+		<div class="right-side"></div>
 	</div>
 </div>
 
@@ -23,8 +33,8 @@
 		font-family: Arimo;
 		.wrapper {
 			display: flex;
-			width: 60%;
-			height: 420px;
+			width: 720px;
+			height: 480px;
 			.left-side {
 				background-color: #09090b;
 				width: 50%;
@@ -36,10 +46,31 @@
 					flex-direction: column;
 					align-items: center;
 					h2 {
-						margin: 24px 0px 0px 0px;
+						margin: 32px 0px 0px 0px;
 					}
 					p {
 						color: #a1a1aa;
+					}
+				}
+				form {
+					margin: 0px 32px 0px 32px;
+					margin-top: 12px;
+					label {
+						display: flex;
+						flex-direction: column;
+						margin-bottom: 28px;
+						input {
+							font-size: 14px;
+							color: white;
+							margin-top: 8px;
+							padding: 8px 10px 8px 10px;
+							background-color: #09090b;
+							border: 1px solid #27272a;
+							border-radius: 6px;
+							&:focus-visible {
+								outline: 2px solid #e4e4e7;
+							}
+						}
 					}
 				}
 			}
