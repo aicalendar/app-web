@@ -16,6 +16,9 @@
 				</label>
 				<button>Log in</button>
 			</form>
+			<div class="bottom-text">
+				<p>Don't have an account? <a href="#">Sign up</a></p>
+			</div>
 		</div>
 		<div class="right-side"></div>
 	</div>
@@ -86,6 +89,18 @@
 							cursor: pointer;
 							background-color: #e4e4e7;
 						}
+					}
+				}
+				.bottom-text {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					margin-top: 8px;
+					font-size: 14px;
+					a {
+						color: white;
+						text-underline-offset: 4px;
 					}
 				}
 			}
