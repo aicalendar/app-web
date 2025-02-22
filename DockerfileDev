@@ -10,9 +10,6 @@ COPY package.json ./
 # Install Dependencies
 RUN npm install
 
-# Copy all changes on fronted
-COPY . .
-
 # expose the app on port 5173
 EXPOSE 5173
 
