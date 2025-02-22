@@ -14,6 +14,7 @@
 					Password
 					<input name="password" type="password" />
 				</label>
+				<button>Log in</button>
 			</form>
 		</div>
 		<div class="right-side"></div>
@@ -70,6 +71,20 @@
 							&:focus-visible {
 								outline: 2px solid #e4e4e7;
 							}
+						}
+					}
+					button {
+						display: flex;
+						font-size: 14px;
+						justify-content: center;
+						width: 100%;
+						border-radius: 6px;
+						padding: 8px 10px 8px 10px;
+						background-color: white;
+						border: none;
+						&:hover {
+							cursor: pointer;
+							background-color: #e4e4e7;
 						}
 					}
 				}
