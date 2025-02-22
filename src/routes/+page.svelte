@@ -5,10 +5,10 @@
 				<h2>Welcome</h2>
 				<p>Login to your AICalendar app</p>
 			</div>
-			<form method="POST">
+			<form method="POST" action="?/login">
 				<label>
 					Username
-					<input name="username" type="email" />
+					<input name="username" type="text" />
 				</label>
 				<label>
 					Password
