@@ -30,7 +30,10 @@
 					<a href="/login">Sign in</a>
 				</div>
 				{#if form?.error}
-					<div class="login-error">{form?.error}</div>
+					<div class="register-error">{form?.error}</div>
+				{/if}
+				{#if form?.success}
+					<div class="register-success">User signed up successfully</div>
 				{/if}
 			</div>
 		</div>
@@ -122,9 +125,13 @@
 							margin-left: 4px;
 						}
 					}
-					.login-error {
+					.register-error {
 						margin-top: 18px;
 						color: #950606;
+					}
+					.register-success {
+						color: green;
+						margin-top: 18px;
 					}
 				}
 			}

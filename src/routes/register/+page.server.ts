@@ -37,5 +37,7 @@ export const actions = {
     if (responseData.error != null) {
       return fail(response.status, { error: responseData.error });
     }
+
+    return { success: true }
   }
 } satisfies Actions;
