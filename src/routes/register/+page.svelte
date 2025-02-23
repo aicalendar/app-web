@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+
+	import type { PageProps } from './$types';
+
+	let { form }: PageProps = $props();
 </script>
 
 <div class="main">
@@ -23,9 +27,11 @@
 			<div class="bottom-text">
 				<div class="no-account">
 					<p>Already have account?</p>
-					<a href="/register">Sign in</a>
+					<a href="/login">Sign in</a>
 				</div>
-				<div class="login-error">ERR</div>
+				{#if form?.error}
+					<div class="login-error">{form?.error}</div>
+				{/if}
 			</div>
 		</div>
 		<div class="right-side"></div>
