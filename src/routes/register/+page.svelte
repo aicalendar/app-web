@@ -18,12 +18,12 @@
 					Password
 					<input name="password" type="password" />
 				</label>
-				<button>Log in</button>
+				<button>Sign up</button>
 			</form>
 			<div class="bottom-text">
 				<div class="no-account">
-					<p>Don't have an account?</p>
-					<a href="/register">Sign up </a>
+					<p>Already have account?</p>
+					<a href="/register">Sign in</a>
 				</div>
 				<div class="login-error">ERR</div>
 			</div>
