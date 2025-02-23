@@ -16,7 +16,7 @@
 			<form method="POST" action="?/login" use:enhance>
 				<label>
 					Username
-					<input name="email" type="text" />
+					<input name="email" type="email" />
 				</label>
 				<label>
 					Password
