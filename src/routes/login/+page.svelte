@@ -15,7 +15,7 @@
 			</div>
 			<form method="POST" action="?/login" use:enhance>
 				<label>
-					Username
+					Email
 					<input name="email" type="email" />
 				</label>
 				<label>
