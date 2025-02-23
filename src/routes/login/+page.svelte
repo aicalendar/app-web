@@ -13,14 +13,14 @@
 				<h2>Welcome</h2>
 				<p>Login to your AICalendar app</p>
 			</div>
-			<form method="POST" action="?/login" use:enhance>
+			<form method="POST" action="?/login" autocomplete="on" use:enhance>
 				<label>
 					Email
-					<input name="email" type="email" />
+					<input name="email" id="email" type="email" autocomplete="email" />
 				</label>
 				<label>
 					Password
-					<input name="password" type="password" />
+					<input name="password" id="password" type="password" autocomplete="current-password" />
 				</label>
 				<button>Log in</button>
 			</form>

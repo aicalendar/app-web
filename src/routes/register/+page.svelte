@@ -13,14 +13,14 @@
 				<h2>Welcome</h2>
 				<p>Create your new AICalendar account</p>
 			</div>
-			<form method="POST" action="?/register" use:enhance>
+			<form method="POST" action="?/register" autocomplete="on" use:enhance>
 				<label>
 					Email
-					<input name="email" type="email" />
+					<input name="email" id="email" type="email" autocomplete="email" />
 				</label>
 				<label>
 					Password
-					<input name="password" type="password" />
+					<input name="password" id="password" type="password" autocomplete="new-password" />
 				</label>
 				<button>Sign up</button>
 			</form>
