@@ -9,7 +9,7 @@ interface RegisterResponse {
   };
   user: {
     id: string;
-    name: string;
+    email: string;
     password: string;
     salt: string;
     createdAt: string;
