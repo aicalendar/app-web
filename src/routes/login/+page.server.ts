@@ -19,13 +19,13 @@ interface LoginResponse {
 export const actions = {
   login: async ({ request, cookies }) => {
     const data = await request.formData();
-    const username = data.get('username');
+    const email = data.get('email');
     const password = data.get('password');
 
     const response = await fetch('http://api-user-service/users/login', {
       method: 'POST',
       body: JSON.stringify({
-        name: username,
+        email: email,
         password: password
       }),
       headers: {
