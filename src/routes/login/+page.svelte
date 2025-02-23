@@ -1,3 +1,10 @@
+<script lang="ts">
+	import { enhance } from '$app/forms';
+	import type { ActionData } from './$types';
+
+	export let form: ActionData;
+</script>
+
 <div class="main">
 	<div class="wrapper">
 		<div class="left-side">
@@ -5,7 +12,7 @@
 				<h2>Welcome</h2>
 				<p>Login to your AICalendar app</p>
 			</div>
-			<form method="POST" action="?/login">
+			<form method="POST" action="?/login" use:enhance>
 				<label>
 					Username
 					<input name="username" type="text" />
@@ -17,7 +24,13 @@
 				<button>Log in</button>
 			</form>
 			<div class="bottom-text">
-				<p>Don't have an account? <a href="/register">Sign up</a></p>
+				<div class="no-account">
+					<p>Don't have an account?</p>
+					<a href="/register">Sign up </a>
+				</div>
+				{#if form?.error}
+					<div class="login-error">{form?.error}</div>
+				{/if}
 			</div>
 		</div>
 		<div class="right-side"></div>
@@ -93,14 +106,24 @@
 				}
 				.bottom-text {
 					display: flex;
-					flex-direction: row;
+					flex-direction: column;
 					align-items: center;
 					justify-content: center;
 					margin-top: 8px;
 					font-size: 14px;
-					a {
-						color: white;
-						text-underline-offset: 4px;
+					.no-account {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						a {
+							color: white;
+							text-underline-offset: 4px;
+							margin-left: 4px;
+						}
+					}
+					.login-error {
+						margin-top: 18px;
+						color: #950606;
 					}
 				}
 			}
